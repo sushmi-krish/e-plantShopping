@@ -51,13 +51,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
-    /* background-color: pink; */
-    /* justify-content: space-between; */
+  justify-content: space-between; 
     padding: 20px;
     width: 100%;
     align-items: center;
     justify-content: center;
 }
+
 
 /* Product Card */
 .product-card {
@@ -101,10 +101,11 @@ body {
     background-color: #e74c3c;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 20px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     margin-top: 10px;
+
 }
 
 .product-button:hover {
