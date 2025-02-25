@@ -212,6 +212,8 @@ function ProductList() {
             ]
         }
     ];
+    
+   
    const styleObj={
     backgroundColor: '#4CAF50',
     color: '#fff!important',
@@ -268,7 +270,22 @@ const handlePlantsClick = (e) => {
         </div>
         {!showCart? (
         <div className="product-grid">
-
+           {plantsArray.map((item, index) => (
+    <ul key={index}>
+     <h1>{item.category}</h1>
+      {item.plants.map((plant, plindex) => (
+        <li key={plindex}>
+          <img src={plant.image} alt={plant.name} width="200px" height="200px"/>
+          <h2>{plant.name}</h2>
+          <h2>{plant.price}</h2>
+          <button>Add to cart</button>
+          </li>
+   
+      ))}
+      
+    </ul>
+  ))} 
+           
 
         </div>
  ) :  (
