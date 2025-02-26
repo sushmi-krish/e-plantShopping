@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from './CartSlice';
 import './CartItem.css';
-import { isPlainObject } from '@reduxjs/toolkit';
+
 
 const CartItem = ({ onContinueShopping }) => {
 
@@ -17,19 +17,22 @@ const CartItem = ({ onContinueShopping }) => {
     };
 
   const handleContinueShopping = (e) => {
+    if(onContinueShopping){
+        onContinueShopping(e)//call parent function
+    }
    
   };
 
 
-
+//calculate the increament by identify the global variable in the payload action(name) and increase the quantity by adding 1
   const handleIncrement = (item) => {
     dispatch(updateQuantity({name:item.name,quantity:item.quantity+1}))
   };
-
+//calculate the decrement by identify the global variable in the payload action (name) and decrease the quantity by 1 
   const handleDecrement = (item) => {
    dispatch(updateQuantity({name:item.name,quantity:item.quantity-1}))
   };
-
+//remove the item by payload action calls the cartReducer from store perform the function
   const handleRemove = (item) => {
    dispatch(removeItem(item.name))
   }
@@ -39,6 +42,18 @@ const CartItem = ({ onContinueShopping }) => {
   const cost = amt*item.quantity
  return cost;
   };
+  const handleCheckoutShopping = (e) => {
+   if(cart.length === 0){
+    alert(`Your cart is empty!please continue shopping before checkout`)
+   
+   }
+   else{
+     const pay =cart.map(item=>parseFloat(item.cost.replace('$',''))*item.quantity)
+     .reduce((total,cost)=>total+cost,0);
+     alert(`please confirm the Total Amount $ ${pay}!Thank you for shopping `)
+   }
+   onContinueShopping(e)
+}
 
   return (
     <div className="cart-container">
@@ -65,7 +80,7 @@ const CartItem = ({ onContinueShopping }) => {
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick={(e) => handleContinueShopping(e)}>Continue Shopping</button>
         <br />
-        <button className="get-started-button1">Checkout</button>
+        <button className="get-started-button1" onClick={(e)=> handleCheckoutShopping(e)}>Checkout</button>
       </div>
     </div>
   );
