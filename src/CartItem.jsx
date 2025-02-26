@@ -7,13 +7,19 @@ import { isPlainObject } from '@reduxjs/toolkit';
 const CartItem = ({ onContinueShopping }) => {
 
   const cart = useSelector(state => state.cart.items);
- console.log(cart)
+
   const dispatch = useDispatch();
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
- 
-  };
+     const amount = cart.map((item)=>{
+        const cost = item.cost;
+        const totalCost = (cost.slice(1,3))*item.quantity
+       //cart.reduce((total, item) => console.log(total + item.cost * item.quantity), 0)
+        totalCost.reduce((total,item)=>console.log(total+item))
+   } )
+   console.log(amount)
+    };
 
   const handleContinueShopping = (e) => {
    
