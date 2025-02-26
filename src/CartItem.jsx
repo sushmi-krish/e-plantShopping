@@ -42,6 +42,7 @@ const CartItem = ({ onContinueShopping }) => {
   const cost = amt*item.quantity
  return cost;
   };
+  //handle the checkout function 
   const handleCheckoutShopping = (e) => {
    if(cart.length === 0){
     alert(`Your cart is empty!please continue shopping before checkout`)
