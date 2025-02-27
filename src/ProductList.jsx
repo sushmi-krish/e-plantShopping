@@ -10,6 +10,7 @@ function ProductList() {
     const [addedToCart,setAddedToCart]= useState({})
     const cartItem = useSelector(state=>state.cart)//reducer array
     const dispatch = useDispatch()
+    console.log(showPlants)
     const plantsArray = [
         {
             category: "Air Purifying Plants",
@@ -317,8 +318,8 @@ const count = cartItem.items.reduce((total,item)=>{return total+item.quantity},0
           <h2 className='product-title'>{plant.name}</h2>
         <h2 className='product-price'>{plant.cost}</h2>
         <p>{plant.description}</p>
-          <button className='product-button' onClick={()=>handleAddToCart(plant)}  disabled={addedToCart[plant.name]}>
-           {addedToCart[plant.name] ? "Added":"Add To Cart"} </button>
+          <button className='product-button' onClick={()=>handleAddToCart(plant)}  disabled={cartItem.items.some(item=>item.name === plant.name)}>
+           {cartItem.items.some(item=>item.name === plant.name) ? "Added To Cart":"Add To Cart"} </button>
          </li>
    
       ))}
