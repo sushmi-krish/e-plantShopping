@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState} from 'react';
 import './ProductList.css'
 import CartItem from './CartItem';
 import { addItem } from './CartSlice';
@@ -281,7 +281,7 @@ const handlePlantsClick = (e) => {
         [plant.name]:true,
 }));
   };
-
+//reduce function give single value 
 const count = cartItem.items.reduce((total,item)=>{return total+item.quantity},0)
 
   
@@ -318,8 +318,8 @@ const count = cartItem.items.reduce((total,item)=>{return total+item.quantity},0
           <h2 className='product-title'>{plant.name}</h2>
         <h2 className='product-price'>{plant.cost}</h2>
         <p>{plant.description}</p>
-          <button className='product-button' onClick={()=>handleAddToCart(plant)}  disabled={cartItem.items.some(item=>item.name === plant.name)}>
-           {cartItem.items.some(item=>item.name === plant.name) ? "Added To Cart":"Add To Cart"} </button>
+         <button className='product-button' onClick={()=>handleAddToCart(plant)}  disabled={cartItem.items.some(item=>item.name === plant.name)}>
+          {cartItem.items.some(item=>item.name === plant.name) ? "Added To Cart":"Add To Cart"} </button>
          </li>
    
       ))}
@@ -335,5 +335,6 @@ const count = cartItem.items.reduce((total,item)=>{return total+item.quantity},0
     </div>
     );
 }
+
 
 export default ProductList;
