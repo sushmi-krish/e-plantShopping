@@ -227,6 +227,7 @@ function ProductList() {
     justifyContent: 'space-between',
     alignIems: 'center',
     fontSize: '20px',
+    gap:'30%',
    }
    const styleObjUl={
     display: 'flex',
@@ -238,9 +239,23 @@ function ProductList() {
     color: 'white',
     fontSize: '30px',
     textDecoration: 'none',
+  
    
    }
-   
+   const styleB={
+    backgroundColor:'red',
+    borderRadius:'50%',
+    fontSize:'16px',
+    width:'25px',
+    height:'25px',
+    alignIems:'center',
+    padding:'5px 5px 5px 8px',
+    position:'fixed',
+    top:'35px',
+    left:'96%',
+    
+   }
+  
 
    const handleCartClick = (e) => {
     e.preventDefault();
@@ -266,7 +281,8 @@ const handlePlantsClick = (e) => {
 }));
   };
 
-  console.log(cartItem.items.length)
+const count = cartItem.items.reduce((total,item)=>{return total+item.quantity},0)
+
   
     return (
         <div>
@@ -285,7 +301,7 @@ const handlePlantsClick = (e) => {
             </div>
             <div style={styleObjUl}>
                 <div> <a href="#" onClick={(e)=>handlePlantsClick(e)} style={styleA}>Plants</a></div>
-                <div> <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}><h1 className='cart'><span>{cartItem.items.length}</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="IconChangeColor" height="68" width="68"><rect width="156" height="156" fill="none"></rect><circle cx="80" cy="216" r="12"></circle><circle cx="184" cy="216" r="12"></circle><path d="M42.3,72H221.7l-26.4,92.4A15.9,15.9,0,0,1,179.9,176H84.1a15.9,15.9,0,0,1-15.4-11.6L32.5,37.8A8,8,0,0,0,24.8,32H8" fill="none" stroke="#faf9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" id="mainIconPathAttribute"></path></svg></h1></a></div>
+                <div> <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}><h1 className='cart'><span style={styleB}>{count}</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="IconChangeColor" height="68" width="68"><rect width="156" height="156" fill="none"></rect><circle cx="80" cy="216" r="12"></circle><circle cx="184" cy="216" r="12"></circle><path d="M42.3,72H221.7l-26.4,92.4A15.9,15.9,0,0,1,179.9,176H84.1a15.9,15.9,0,0,1-15.4-11.6L32.5,37.8A8,8,0,0,0,24.8,32H8" fill="none" stroke="#faf9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" id="mainIconPathAttribute"></path></svg></h1></a></div>
             </div>
         </div>
         {!showCart? (
