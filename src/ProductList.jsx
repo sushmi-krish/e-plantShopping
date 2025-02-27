@@ -315,11 +315,12 @@ const count = cartItem.items.reduce((total,item)=>{return total+item.quantity},0
       {item.plants.map((plant, plindex) => (
         <li key={plindex}>
           <img src={plant.image} alt={plant.name} className="product-image"/>
+          <h1 className='product-sale'><span>sale</span></h1>
           <h2 className='product-title'>{plant.name}</h2>
         <h2 className='product-price'>{plant.cost}</h2>
         <p>{plant.description}</p>
-         <button className='product-button' onClick={()=>handleAddToCart(plant)}  disabled={cartItem.items.some(item=>item.name === plant.name)}>
-          {cartItem.items.some(item=>item.name === plant.name) ? "Added To Cart":"Add To Cart"} </button>
+         <button className='product-button' onClick={()=>handleAddToCart(plant)} style={{backgroundColor:cartItem.items.find(item=>item.name === plant.name) ? "red":"green"}}  disabled={cartItem.items.find(item=>item.name === plant.name)}>
+          {cartItem.items.find(item=>item.name === plant.name) ? "Added To Cart":"Add To Cart"} </button>
          </li>
    
       ))}
