@@ -308,20 +308,20 @@ const count = cartItem.items.reduce((total,item)=>{return total+item.quantity},0
         {!showCart? (
         
         <div className="product-grid">
-    {plantsArray.map((item, index) => (
-    <div key={index} className='product-list'>
-     <h1 className='product-list'>{item.category}</h1>
-     <ul className='product-list'>
-      {item.plants.map((plant, plindex) => (
-        <li key={plindex}>
-          <img src={plant.image} alt={plant.name} className="product-image"/>
-          <h1 className='product-sale'><span>sale</span></h1>
-          <h2 className='product-title'>{plant.name}</h2>
-        <h2 className='product-price'>{plant.cost}</h2>
-        <p>{plant.description}</p>
-         <button className='product-button' onClick={()=>handleAddToCart(plant)} style={{backgroundColor:cartItem.items.find(item=>item.name === plant.name) ? "red":"green"}}  disabled={cartItem.items.find(item=>item.name === plant.name)}>
-          {cartItem.items.find(item=>item.name === plant.name) ? "Added To Cart":"Add To Cart"} </button>
-         </li>
+        {plantsArray.map((item, index) => (
+        <div key={index} className='product-list'>
+         <h1 className='product-list'>{item.category}</h1>
+         <ul className='product-list'>
+          {item.plants.map((plant, plindex) => (
+            <li key={plindex}>
+              <img src={plant.image} alt={plant.name} className="product-image" style={{position:'relative'}}/>
+              <span className='product-sale' style={{position:"absolute"}}>sale</span>
+              <h2 className='product-title'>{plant.name}</h2>
+            <h2 className='product-price'>{plant.cost}</h2>
+            <p>{plant.description}</p>
+             <button className='product-button' onClick={()=>handleAddToCart(plant)} style={{backgroundColor:cartItem.items.find(item=>item.name === plant.name) ? "red":"green"}}  disabled={cartItem.items.find(item=>item.name === plant.name)}>
+              {cartItem.items.find(item=>item.name === plant.name) ? "Added To Cart":"Add To Cart"} </button>
+             </li>
    
       ))}
       
