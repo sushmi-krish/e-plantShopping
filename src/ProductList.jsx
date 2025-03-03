@@ -306,29 +306,38 @@ const count = cartItem.items.reduce((total,item)=>{return total+item.quantity},0
             </div>
         </div>
         {!showCart? (
-        
+       
         <div className="product-grid">
+           
         {plantsArray.map((item, index) => (
-        <div key={index} className='product-list'>
-         <h1 className='product-list'>{item.category}</h1>
+        <div key={index} className='product-category'>
+         <h1  className='category-title'>{item.category}</h1>
+       
          <ul className='product-list'>
           {item.plants.map((plant, plindex) => (
-            <li key={plindex}>
+          
+            <li key={plindex} className='product-card'>
+              
               <img src={plant.image} alt={plant.name} className="product-image" style={{position:'relative'}}/>
-              <span className='product-sale' style={{position:"absolute"}}>sale</span>
+              
               <h2 className='product-title'>{plant.name}</h2>
             <h2 className='product-price'>{plant.cost}</h2>
             <p>{plant.description}</p>
-             <button className='product-button' onClick={()=>handleAddToCart(plant)} style={{backgroundColor:cartItem.items.find(item=>item.name === plant.name) ? "red":"green"}}  disabled={cartItem.items.find(item=>item.name === plant.name)}>
+             <button className='product-button' onClick={()=>handleAddToCart(plant)} style={{backgroundColor:cartItem.items.find(item=>item.name === plant.name) ? "grey":"green"}}  disabled={cartItem.items.find(item=>item.name === plant.name)}>
               {cartItem.items.find(item=>item.name === plant.name) ? "Added To Cart":"Add To Cart"} </button>
+              
              </li>
-   
-      ))}
-      
+       
+          ))}
+          
+     
     </ul>
+    
     </div>
+
   ))} 
-</div>
+  </div>
+
  ) :  (
     <CartItem onContinueShopping={handleContinueShopping} />
 )}

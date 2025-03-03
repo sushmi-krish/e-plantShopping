@@ -47,6 +47,15 @@ body {
     align-items: center;
     justify-content: center;
 }
+.product-sale{
+    background-color: #c0392b;
+    width:40px;
+    padding: 2px;
+    height:20px;
+    color:#f0f0f0;
+    font-size: 16px;
+ 
+}
 .product-list {
     display: flex;
     flex-wrap: wrap;
@@ -57,31 +66,26 @@ body {
     align-items: center;
     justify-content: center;
 }
-.product-sale{
-    background-color: #c0392b;
-    width:40px;
-    padding: 2px;
-    height:20px;
-    color:#f0f0f0;
-    font-size: 16px;
- position: relative;
-}
 
 
 /* Product Card */
 .product-card {
-    flex: 0 0 calc(33.33% - 20px); /* Adjust width for 3 cards per row with 20px gap */
-    max-width: calc(26.33% - 20px); /* Adjust max-width for 3 cards per row with 20px gap */
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    position: relative;
     
-    gap: 20px;
+        flex: calc(33.33% - 20px); /* Adjust width for 3 cards per row with 20px gap */
+        max-width: calc(26.33% - 20px); /* Adjust max-width for 3 cards per row with 20px gap */
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+        gap: 20px;
+        position:relative;
+     
 }
+
+
+
 
 /* Pseudo-classes - Hover effect on product button */
 .product-card:hover {
@@ -93,17 +97,20 @@ body {
 .product-title {
     font-weight: bold;
     margin-bottom: 10px;
+  
 }
 
 .product-price {
     color: #e74c3c;
     font-size: 1.2rem;
     margin-bottom: 10px;
+  
 }
 
 .product-image {
     max-width: 100%;
     height: 200px; /* Adjust height for better consistency */
+ 
 }
 
 .product-button {
@@ -116,10 +123,13 @@ body {
     margin-top: 10px;
 
 }
-
+.category-title{
+    padding-left:38%;
+}
 
 .product-button:hover {
     background-color: #c0392b;
+
 }
 
 /* Pseudo-elements - Sale badge */
@@ -127,10 +137,9 @@ body {
     content: "SALE";
     background-color: #e74c3c;
     color: #fff;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 5px 10px;
+    position:absolute;   
+    top: 0px;
+    right: 0px;
     border-radius: 0 0 0 5px;
 }
 .tag_home_link{
