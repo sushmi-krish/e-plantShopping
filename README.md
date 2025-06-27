@@ -18,8 +18,10 @@ Paradise Nursery is an e-commerce React application focused on plants. It allows
   - Reducers: Specify how the state changes in response to actions.
   - Store: Holds the entire application state and allows components to access or update it.
 * JavaScript ES6+
-* CSS for styling
-  ---
+*  CSS for styling
+
+---
+
 # Implementation Details
 - Components are composed and nested to create a modular UI.
 - State management is handled via React Hooks at the component level and Redux globally.
