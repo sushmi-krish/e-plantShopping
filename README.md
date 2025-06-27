@@ -30,7 +30,7 @@ Paradise Nursery is an e-commerce React application focused on plants. It allows
 - The application demonstrates dynamic UI updates based on state changes.
 ---
 #  Started
-1.Clone the repository.
-2.Run npm install to install dependencies.
-3.Run npm start to launch the application.
-4.Explore products, add items to your cart, and enjoy the interactive shopping experience!
+- Clone the repository.
+- Run npm install to install dependencies.
+- Run npm start to launch the application.
+- Explore products, add items to your cart, and enjoy the interactive shopping experience!
