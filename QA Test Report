@@ -1,0 +1,54 @@
+##Product overview 
+Paradise Nursery is a react based e-commerce website it allow the user to view the item, allow items to add in the basket,view quantity and view total cost . 
+the purpose of the QA Report is testing performed on deployed application . 
+---
+### Scope of testing 
+* Fuctional testing
+* UI/Ux testing 
+* Cross Browser testing 
+* console/State validation 
+* Observation Logging 
+---
+###Test Environment 
+Browser Tested 
+* Microsoft Edge
+* Google Chorme
+---
+##Functional Test Result 
+Cart Functionality 
+* Add to Cart : Pass
+* Remove from Cart : pass
+* Increase /Decrease the quality : Pass
+* Total price calculation : pass
+* Cart Icon Count Update : pass
+* Navigation between Pages : Pass
+Evidence : snapshots Function_test_Chrome.png/Fuction_test_edge.png
+---
+Cross Browser test Result 
+| Feature tested   | Google Chorme | Microsoft Edge  |  Result      |
+|------------------|---------------|-----------------|--------------|
+| UI Rendering     |       +.      |     +.          | Consistent   |
+| Add to Cart      |       +.      |     +.          |  Pass        |
+| cart Total update|       +.      |     +.          |  Pass        |
+| console Output   |      false    |    true         |  Observation |
+|------------------|---------------|-----------------|--------------|
+#Observation: chrome logs false while Edge logs true for the same console line.
+UI and functionality remains correct.No errors or warnings.
+Evidence: Screenshot 
+---
+##Console & State validation
+* No Console errors found 
+* State updates logged functionality 
+* Mior variation in boolean logs between the browsers 
+---
+##Summary 
+All Major userflow worked correctly across the cross browser .
+No functional or UI defects
+one cross browser difference was observed but does not affect the functionality .
+---
+##Conclusion
+The application is stable ,functional and consistent across browsers
+Testing is completed for this release.
+---
+
+ 
