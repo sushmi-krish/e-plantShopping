@@ -27,9 +27,9 @@ Evidence : snapshots Function_test_Chrome.png/Fuction_test_edge.png
 Cross Browser test Result 
 | Feature tested   | Google Chorme | Microsoft Edge  |  Result      |
 |------------------|---------------|-----------------|--------------|
-| UI Rendering     |       +.      |     +.          | Consistent   |
-| Add to Cart      |       +.      |     +.          |  Pass        |
-| cart Total update|       +.      |     +.          |  Pass        |
+| UI Rendering     |       +       |     +           | Consistent   |
+| Add to Cart      |       +       |     +           |  Pass        |
+| cart Total update|       +       |     +           |  Pass        |
 | console Output   |      false    |    true         |  Observation |
 |------------------|---------------|-----------------|--------------|
 #Observation: chrome logs false while Edge logs true for the same console line.
